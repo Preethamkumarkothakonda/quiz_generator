@@ -6,20 +6,6 @@ Built with **React, TypeScript, and Tailwind CSS** for a smooth, scalable, and e
 
 🌐 **Live Demo** → [Quiz Master on Vercel](https://quiz-generator-six-delta.vercel.app/) 
 
----
-
-## 📑 Table of Contents
-
-1. [Project Setup & Demo](#-project-setup--demo)
-2. [Problem Understanding](#-problem-understanding)
-3. [AI Prompts & Iterations](#-ai-prompts--iterations)
-4. [Architecture & Code Structure](#-architecture--code-structure)
-5. [Screenshots](#-screenshots)
-6. [Known Issues / Improvements](#-known-issues--improvements)
-7. [Bonus Work](#-bonus-work)
-8. [Technologies Used](#-technologies-used)
-
----
 
 ## 1. 🚀 Project Setup & Demo
 
