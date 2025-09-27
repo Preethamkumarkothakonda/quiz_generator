@@ -174,10 +174,11 @@ TopicSelection → QuizLoader → Quiz → Results
 ---
 
 ## 5. 🖼 Screenshots
-Homepage[homepage.png]
-Fetching[loading.png]
-Quiz[quiz.png]
-Result[result.png]
+![Homepage](homepage.png)  
+![Fetching](loading.png)  
+![Quiz](quiz.png)  
+![Result](result.png)  
+
 ### Desktop
 
 * **Topic Selection:** Grid layout with predefined + custom topics
