@@ -4,7 +4,7 @@
 A **modern, responsive web application** that generates **dynamic quiz questions** using **Google’s Gemini AI**.
 Built with **React, TypeScript, and Tailwind CSS** for a smooth, scalable, and engaging user experience.
 
-🌐 **Live Demo** → [Quiz Master on Vercel](https://quiz-generator-six-delta.vercel.app/) *(replace with your actual URL)*
+🌐 **Live Demo** → [Quiz Master on Vercel](https://quiz-generator-six-delta.vercel.app/) 
 
 ---
 
