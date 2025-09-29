@@ -102,84 +102,89 @@ const LoaderSpinner: React.FC = () => {
         className="absolute bottom-40 right-32 w-12 h-12 bg-blue-200 rounded-full opacity-20"
       />
 
-      {/* Main content */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6 }}
-        className="text-center z-10"
-      >
-        {/* Brain icon with circular background */}
+      {/* Main content - Centered */}
+      <div className="flex flex-col items-center justify-center min-h-screen">
         <motion.div
-          animate={{ 
-            rotate: [0, 5, -5, 0],
-            scale: [1, 1.05, 1]
-          }}
-          transition={{ 
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="relative mx-auto mb-8"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.6 }}
+          className="text-center z-10"
         >
-          {/* Circular background */}
-          <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-xl">
-            <BrainIcon />
+          {/* Brain icon with circular background and shadow - PERFECTLY CENTERED */}
+          <div className="relative mx-auto mb-8 flex items-center justify-center w-24 h-24">
+            {/* Pulsing ring shadow - positioned to match brain icon exactly */}
+            <motion.div
+              animate={{ 
+                scale: [1, 1.2, 1],
+                opacity: [0.5, 0.2, 0.5]
+              }}
+              transition={{ 
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="absolute w-24 h-24 bg-blue-500 rounded-full opacity-30"
+            />
+            
+            {/* Brain icon with rotation animation */}
+            <motion.div
+              animate={{ 
+                rotate: [0, 5, -5, 0],
+                scale: [1, 1.05, 1]
+              }}
+              transition={{ 
+                duration: 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+              className="relative z-10"
+            >
+              {/* Circular background */}
+              <div className="w-24 h-24 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center shadow-xl">
+                <BrainIcon />
+              </div>
+            </motion.div>
           </div>
-          
-          {/* Pulsing ring */}
+
+          {/* Main title */}
+          <motion.h1
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="text-3xl md:text-4xl font-bold text-gray-800 mb-4"
+          >
+            Generating Your Quiz
+          </motion.h1>
+
+          {/* Subtitle with topic */}
           <motion.div
-            animate={{ 
-              scale: [1, 1.2, 1],
-              opacity: [0.5, 0.2, 0.5]
-            }}
-            transition={{ 
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="absolute inset-0 w-24 h-24 bg-blue-500 rounded-full opacity-30"
-          />
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            className="mb-8"
+          >
+            <p className="text-lg text-gray-600 mb-1">
+              Our AI is crafting personalized questions about{' '}
+              <span className="font-semibold text-blue-600">
+                {state.selectedTopic || 'your topic'}
+              </span>
+            </p>
+          </motion.div>
+
+          {/* Animated loading dots */}
+          <LoadingDots />
+
+          {/* Bottom message */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6 }}
+            className="text-gray-500 text-sm"
+          >
+            This may take a few moments...
+          </motion.p>
         </motion.div>
-
-        {/* Main title */}
-        <motion.h1
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="text-3xl md:text-4xl font-bold text-gray-800 mb-4"
-        >
-          Generating Your Quiz
-        </motion.h1>
-
-        {/* Subtitle with topic */}
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
-          transition={{ delay: 0.3 }}
-          className="mb-8"
-        >
-          <p className="text-lg text-gray-600 mb-1">
-            Our AI is crafting personalized questions about{' '}
-            <span className="font-semibold text-blue-600">
-              {state.selectedTopic || 'your topic'}
-            </span>
-          </p>
-        </motion.div>
-
-        {/* Animated loading dots */}
-        <LoadingDots />
-
-        {/* Bottom message */}
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-          className="text-gray-500 text-sm"
-        >
-          This may take a few moments...
-        </motion.p>
-      </motion.div>
+      </div>
 
       {/* Bottom floating elements */}
       <motion.div
